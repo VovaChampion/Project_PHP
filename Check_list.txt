@@ -1,0 +1,8 @@
+
+
+1. Fundera på vilka funktioner/flöden som behövs i en e-handelssite, t ex logga in, lägga till en vara i en korg osv.
+Funktioner:
+- logga in på konto
+- lägga till en vara i en korg
+- visa varukorg
+- ta bort en vara från varukorg
