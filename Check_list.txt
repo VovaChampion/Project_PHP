@@ -7,3 +7,4 @@ Funktioner:
 - visa varukorg
 - ta bort en vara från varukorg
 - show produt's images
+javad write smt
