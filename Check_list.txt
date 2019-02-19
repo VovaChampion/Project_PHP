@@ -1,10 +1,29 @@
-﻿
+
 
 1. Fundera på vilka funktioner/flöden som behövs i en e-handelssite, t ex logga in, lägga till en vara i en korg osv.
+
 Funktioner:
-- logga in på konto
-- lägga till en vara i en korg
-- visa varukorg
-- ta bort en vara från varukorg
-- show produt's images
-javad write smt
+
+- Konto:
+  + skapa konto
+  + logga in 
+  + logga ut 
+  + redigera sitt lösenord 
+  + se sina ordrar (historia)
+  + logga in i önskelista
+
+- Varukorg:
+  + lägga till en vara i en korg
+  + ta bort en vara från varukorg
+  + se varukorg (produktlist)
+
+- Produkter:
+  + visa produkter (bild / beskrivning)
+  + sortera produkter på villkor (pris/namn/märke/popularitet/datum etc)
+  + söka produkter
+  + jämföra produkter
+
+- Prenumerera på nyhetsbrev   
+
+- Chatbot eller något snabbt sätt att kontakta webbutiken (WhatsApp/ Messenger)
+
