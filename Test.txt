@@ -1,31 +1,8 @@
 
 Funktioner:
 
-<<<<<<< HEAD
-1. Fundera på vilka funktioner/flöden som behövs i en e-handelssite, t ex logga in, lägga till en vara i en korg osv.
-=======
 - Konto:
-  + skapa konto
-  + logga in 
-  + logga ut 
-  + redigera sitt lösenord 
-  + se sina ordrar (historia)
-  + logga in i önskelista
-
 - Varukorg:
-  + lägga till en vara i en korg
-  + ta bort en vara från varukorg
-  + se varukorg (produktlist)
-
 - Produkter:
-  + visa produkter (bild / beskrivning)
-  + sortera produkter på villkor (pris/namn/märke/popularitet/datum etc)
-  + söka produkter
-  + jämföra produkter
-
 - Prenumerera på nyhetsbrev   
-
 - Chatbot eller något snabbt sätt att kontakta webbutiken (WhatsApp/ Messenger)
->>>>>>> parent of 26d8eec... new changes
-
-Funktioner: test
