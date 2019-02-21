@@ -1,2 +1,6 @@
 
 Funktioner:
+
+1. Fundera på vilka funktioner/flöden som behövs i en e-handelssite, t ex logga in, lägga till en vara i en korg osv.
+
+Funktioner: test
