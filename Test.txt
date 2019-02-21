@@ -11,7 +11,7 @@ Funktioner:
   + redigera sitt lösenord 
   + se sina ordrar (historia)
   + logga in i önskelista
-
+tra-ta-ta
 - Varukorg:
   + lägga till en vara i en korg
   + ta bort en vara från varukorg
