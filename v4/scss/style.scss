@@ -1,0 +1,217 @@
+@import "normalize";
+
+body {
+    font-family: 'Alegreya', serif;
+    background-color: bisque;
+    margin: 2% 10%;
+    -display: flex;
+}
+main {
+    position: relative;
+    background-color: white;
+    flex-wrap: nowrap;
+    -overflow:hidden;
+    margin: 2%;
+    display: flex;
+    flex-flow: row wrap;
+    min-width:520; 
+    
+}
+
+.product_name {
+    margin: 5%;
+    background-color: lightcyan;
+    position: relative;
+    text-align: center;
+    box-shadow: 3px 5px  rgba(57, 176, 180, 0.6);
+    order: 1;
+    display: inline-block;
+    width: 90%;
+}
+
+#product_description {
+    position: relative;
+    order: 2;
+    display: flex;
+    padding-left: 10px;
+    background-color: lightcyan;
+    margin-left: 55%;
+    margin-top: 2%;
+    margin-right: 5%;
+    display: inline-block;
+    width: 55%;
+    box-shadow: 3px 5px  rgba(57, 176, 180, 0.6);
+}
+
+.big-image {
+    position: relative;
+    display: block;
+    margin-top: -200px;
+    -background-image: url("/scss/imgs/photo_1.jpg");
+    max-width: 500px;
+    height: auto;
+    box-sizing: border-box;
+    opacity: 1;
+    transition: .5s ease;
+    backface-visibility: hidden;
+} 
+.material-icons {
+    position: relative; 
+    transition: .5s ease;
+    opacity: 0;   
+    -bottom: 20%;
+    margin-left: 80%;
+    transform: translate(-50%, -50%);
+}
+.big-image:hover {
+    opacity: 0.7;
+}
+.ImageViewer:hover span .material-icons{ 
+    opacity: 1;  
+}  
+/* .big-image:hover hover span .material-icons{   // -> fungerar inte
+    opacity: 1;  
+} */
+
+
+.ImageViewer {
+    -margin:10px;
+    order: 3;
+}
+.ImageViewer .small-images {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    /* flex-direction: row;
+    justify-content: flex-start; */
+    box-sizing: border-box;
+    background-color: white;
+    max-width: 500px;
+    margin-top: 5px;
+    margin-left: 5%;
+}
+
+.ImageViewer .small-images > img{
+    -min-width: 80px;
+    max-width: 150px;
+    max-height: 120px;
+    flex:25%;
+    margin: 3px;
+    border: rgb(197, 189, 189) solid 1px;
+}
+.ImageViewer .small-images > img:hover{
+    border: black solid 1px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#overlay {
+    background-color: rgba(0,0,0,0.9);
+    position: fixed;
+    top:0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: none;
+}
+#prevImg {
+    position: fixed;
+    border-radius: 50%;
+    top: 50%;
+    left: 5%;
+} 
+#nextImg {
+    position: fixed;
+    border-radius: 50%;
+    top: 50%;
+    right: 5%;
+} 
+
+#closeImg {
+    position: fixed;
+    border-radius: 50%;
+    top: 10%;
+    right: 5%;
+} 
+#overlay.visible {
+    display: block;
+}
+
+#overlay .overlay-image {
+    width: 75%;
+    height: auto;
+    position: relative;
+    border: 2px solid black;
+    margin: 5% auto;
+    display: block;
+    min-width: 450px;
+    max-width: 650px;
+} 
+
+@media screen and (max-width:600px) {
+    body {
+        margin: 2%;
+    }
+    main {
+        width: 520px;
+    }
+    .big-image{
+        margin-top: 0;
+    }
+    #product_description {
+        box-sizing: border-box;
+        order: 3;
+        width: 90%;
+        position: relative;
+    }
+    #overlay .overlay-image {
+        -max-width: 650px;
+    } 
+    .ImageViewer {
+        width: 520px;
+    }
+    #prevImg {
+        top: 35%;
+        left: 2%;
+    } 
+    #nextImg {
+        top: 35%;
+        right: 2%;
+    } 
+    #closeImg {
+        top: 2%;
+        right: 2%;
+    } 
+}  
+
+@media screen and (max-width:1200px) {
+    #prevImg {
+        -top: 40%;
+        left: 2%;
+    } 
+    #nextImg {
+        -top: 40%;
+        right: 2%;
+    } 
+    #closeImg {
+        top: 10%;
+        right: 2%;
+    } 
+    .ImageViewer .small-images > img{
+        flex: 50%;
+        max-width: 100px;
+        max-height: 80px;
+    }
+    .big-image{
+        margin-top: 0;
+    }
+    .big-image span {
+        top: 45%;
+    }
+    #product_description {
+        order: 3;
+        width: 90%;
+        margin-left: 5%;
+        margin-bottom: 2%;     
+    }
+}   
+
