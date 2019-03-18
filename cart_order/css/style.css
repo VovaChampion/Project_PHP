@@ -1,0 +1,101 @@
+body {
+	background: skyblue;
+	padding: 0 10px;
+}
+
+label {
+	display: block;
+	margin: 5px 0;
+}
+
+table {
+	margin-left: 10px;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+td,
+th {
+	padding: 5px;
+	border-bottom: 1px solid #aaa;
+}
+
+.submit, button{
+	display: inline-block;
+	width: 130px;
+	margin: 5px 0;
+	padding: 7px;
+	font-size: 15px;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	outline: none;
+	color: black;
+	background-color:rgb(49, 178, 230);
+	border: none;
+	border-radius: 10px;
+	box-shadow: 0 5px #999;
+}
+
+.submit:hover, button:hover {
+	background-color: rgb(23, 119, 156);
+}
+
+.submit:active, button:active {
+	background-color: rgb(36, 138, 179);
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+}
+
+#content {
+	min-height: 300px;
+	padding: 0 30px;
+}
+ 
+.products{
+	width: 400px;
+	margin: 5px;
+	background-color: greenyellow;
+	border: 2px solid black;;
+}
+
+#product-grid {
+	display: flex;
+	justify-content: space-around;
+	flex-flow: row wrap;
+}
+.product-title{
+	-text-align: center;
+	margin: 5px;
+	font-weight: bolder;
+}
+
+.product-price{
+	margin: 5px;
+	font-weight: bolder;
+}
+.product-description{
+	margin: 5px;
+}
+
+.cart-action{
+	margin: 5px;
+}
+
+img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+#my_form {
+	display: none;
+	min-width: 500px;
+}
+
+a {
+	margin: 5px;
+}
+
+h1 {
+	margin: 5px;
+}
