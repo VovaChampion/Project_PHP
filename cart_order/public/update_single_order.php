@@ -64,23 +64,25 @@ if (isset($_GET['order_item_id'])) {
 
 <?php require "../templates/header.php"; ?>
 
-<?php if (isset($_POST['submit']) && $statement) : ?>
-	<blockquote><?php echo escape($_POST['order_item_id']); ?> successfully updated.</blockquote>
-<?php endif; ?>
+<div class="container">
+  <?php if (isset($_POST['submit']) && $statement) : ?>
+    <blockquote><?php echo escape($_POST['order_item_id']); ?> successfully updated.</blockquote>
+  <?php endif; ?>
 
-<h2>Edit order</h2>
+  <h2>Edit order</h2>
 
-<form method="post">
-    <input name="csrf" type="hidden" value="<?php echo escape($_SESSION['csrf']); ?>">
-    <?php foreach ($order as $key => $value) : ?>
-      <label for="<?php echo $key; ?>"><?php echo ucfirst($key); ?></label>
-	    <input type="text" name="<?php echo $key; ?>" id="<?php echo $key; ?>" value="<?php echo escape($value); ?>" <?php echo ($key === 'order_id' ? 'readonly' : null); ?>>
-    <?php endforeach; ?> <br>
-    <input class="submit" type="submit" name="submit" value="Submit">
-</form>
+  <form method="post">
+      <input name="csrf" type="hidden" value="<?php echo escape($_SESSION['csrf']); ?>">
+      <?php foreach ($order as $key => $value) : ?>
+        <label for="<?php echo $key; ?>"><?php echo ucfirst($key); ?></label>
+        <input type="text" name="<?php echo $key; ?>" id="<?php echo $key; ?>" value="<?php echo escape($value); ?>" <?php echo ($key === 'order_id' ? 'readonly' : null); ?>><br>
+      <?php endforeach; ?> <br>
+      <input class="btn btn-success" type="submit" name="submit" value="Submit">
+  </form><br>
 
-<a href="index.php?action=emptyall" class="btn btn-primary" role="button">Go back to home page</a><br>
-<a href="update_order.php" class="btn btn-info" role="button">Back to update</a><br>
-
+  <a href="index.php?action=emptyall" class="btn btn-primary" role="button">Go back to home page</a><br>
+  <a href="update_order.php" class="btn btn-info" role="button">Back to update</a><br>
+  <a href="delete_order.php" class="btn btn-info" role="button">Delete -> Order</a><br>
+</div>
 
 <?php require "../templates/footer.php"; ?>

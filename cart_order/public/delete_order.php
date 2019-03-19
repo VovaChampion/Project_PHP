@@ -41,48 +41,49 @@ try {
 ?>
 <?php require "../templates/header.php"; ?>
         
-<h2>Delete order</h2>
+<div class="container">
+  <h2>Delete order</h2><br>
 
-<?php if ($success) echo $success; ?>
-<br>
+  <?php if ($success) echo $success; ?><br>
+  <br>
 
-<form method="post">
-  <input name="csrf" type="hidden" value="<?php echo escape($_SESSION['csrf']); ?>">
-  <table>
-      <thead>
-        <tr>
-          <th>Order Id</th>
-          <th>Order Item Id</th>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Product Id</th>
-          <th>Quantity</th>
-          <th>Date</th>
-          <th>Delete</th>
+  <form method="post">
+    <input name="csrf" type="hidden" value="<?php echo escape($_SESSION['csrf']); ?>">
+    <table>
+        <thead>
+          <tr>
+            <th>Order Id</th>
+            <th>Order Item Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Product Id</th>
+            <th>Quantity</th>
+            <th>Date</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($result as $row) : ?>
+          <tr>
+
+            <td><?php echo escape($row["order_id"]); ?></td>
+            <td><?php echo escape($row["order_item_id"]); ?></td>
+            <td><?php echo escape($row["order_name"]); ?></td>
+            <td><?php echo escape($row["order_email"]); ?></td>
+            <td><?php echo escape($row["product_id"]); ?></td>
+            <td><?php echo escape($row["quantity"]); ?></td>
+            <td><?php echo escape($row["order_date"]); ?></td>
+          <td><button type="submit" class="btn btn-danger" name="submit" value="<?php echo escape($row["order_item_id"]); ?>" onclick="return confirm_delete()">Delete</button></td>
         </tr>
-      </thead>
-      <tbody>
-      <?php foreach ($result as $row) : ?>
-        <tr>
+      <?php endforeach; ?>
+      </tbody>
+    </table>
+  </form>
+  <br>
 
-          <td><?php echo escape($row["order_id"]); ?></td>
-          <td><?php echo escape($row["order_item_id"]); ?></td>
-          <td><?php echo escape($row["order_name"]); ?></td>
-          <td><?php echo escape($row["order_email"]); ?></td>
-          <td><?php echo escape($row["product_id"]); ?></td>
-          <td><?php echo escape($row["quantity"]); ?></td>
-          <td><?php echo escape($row["order_date"]); ?></td>
-        <td><button type="submit" name="submit" value="<?php echo escape($row["order_item_id"]); ?>" onclick="return confirm_delete()">Delete</button></td>
-      </tr>
-    <?php endforeach; ?>
-    </tbody>
-  </table>
-</form>
-<br>
-
-<a href="index.php?action=emptyall" class="btn btn-primary" role="button">Go back to home page</a><br>
-<a href="read_order.php" class="btn btn-info" role="button">Read -> Order</a><br>	
-<a href="update_order.php" class="btn btn-info" role="button">Update -> Order</a><br>	
-
+  <a href="index.php?action=emptyall" class="btn btn-primary" role="button">Go back to home page</a><br>
+  <a href="read_order.php" class="btn btn-info" role="button">Read -> Order</a><br>	
+  <a href="update_order.php" class="btn btn-info" role="button">Update -> Order</a><br>	
+</div>
 
 <?php require "../templates/footer.php"; ?>

@@ -1,5 +1,6 @@
 body {
-	background: skyblue;
+	background: rgb(153, 234, 245);
+	--background-image: url("../images/earth2.jpeg");
 	padding: 0 10px;
 }
 
@@ -9,7 +10,7 @@ label {
 }
 
 table {
-	margin-left: 10px;
+	-margin-left: 10px;
 	border-collapse: collapse;
 	border-spacing: 0;
 }
@@ -20,7 +21,7 @@ th {
 	border-bottom: 1px solid #aaa;
 }
 
-.submit, button{
+/* .submit, button{
 	display: inline-block;
 	width: 130px;
 	margin: 5px 0;
@@ -45,18 +46,29 @@ th {
 	background-color: rgb(36, 138, 179);
 	box-shadow: 0 5px #666;
 	transform: translateY(4px);
+} */
+
+h1.company_name{
+	color: rgb(232, 248, 140);
+	margin: 5px;
+	text-align: left;
+	height: 3em;
+	padding: 1em 0 0 1em ;
+	background-color: rgb(9, 36, 155);
 }
 
-#content {
-	min-height: 300px;
-	padding: 0 30px;
+.container {
+	min-height: 500px;
+	background: rgb(153, 234, 245);
 }
  
 .products{
-	width: 400px;
-	margin: 5px;
-	background-color: greenyellow;
-	border: 2px solid black;;
+	display: flex;
+	width: 340px;
+	margin: 7px;
+	background-color:lightgray;
+	border: 2px solid black;
+	border-radius: 10px;
 }
 
 #product-grid {
@@ -65,13 +77,12 @@ th {
 	flex-flow: row wrap;
 }
 .product-title{
-	-text-align: center;
 	margin: 5px;
 	font-weight: bolder;
 }
 
 .product-price{
-	margin: 5px;
+	margin: 10px 5px;
 	font-weight: bolder;
 }
 .product-description{
@@ -82,10 +93,13 @@ th {
 	margin: 5px;
 }
 
-img {
+.product-image {
 	display: block;
-	margin-left: auto;
+	margin-left: 40px;
 	margin-right: auto;
+	margin-top: 5px;
+	margin-bottom: 20px;
+	border-radius: 8px;
 }
 #my_form {
 	display: none;
@@ -96,6 +110,41 @@ a {
 	margin: 5px;
 }
 
-h1 {
+.carousel-inner img {
+	width: 100%;
+	height: 100%;
+}
+#promotion {
+	display: block;
+	margin-top: -20px;
+	margin-bottom: 5px;
+}
+
+.product-description{
+	border-top-style: dotted;
+  	border-bottom-style: dotted;
+	border-width: 1px;
+}
+.btnAddAction{
+	display: flex;
+	background: greenyellow;
+	position: relative;
+	top:-35px;
+	left: 17%;
+	min-height: 30px;
+	border-radius: 5px;
+}
+.product-quantity{
+	border-radius: 5px;
+	text-align: center;
+}
+
+footer {
+	color: rgb(232, 248, 140);
 	margin: 5px;
+	margin-bottom: 1%;
+	text-align: left;
+	height: 3em;
+	padding: 1em 0 0 1em ;
+	background-color: rgb(9, 36, 155);
 }

@@ -28,54 +28,58 @@ if (isset($_POST['submit'])) {
 
 ?>
 <?php require "../templates/header.php"; ?>
-<?php if ($success)?><p><?php echo $success; ?></p>
 
-<?php  
-if (isset($_POST['submit'])) {
-  if ($result && $statement->rowCount() > 0) { ?>
-    <h3>Results</h3>
-    <table>
-      <thead>
-        <tr>
-          <th>Order Id</th>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Product Name</th>
-          <th>Quantity</th>
-          <th>Date</th>
-          <!-- <th colspan="2">Action</th> -->
-        </tr>
-      </thead>
-      <tbody>
-      <?php foreach ($result as $row) : ?>
-        <tr>
-          <td><?php echo escape($row["order_id"]); ?></td>
-          <td><?php echo escape($row["order_name"]); ?></td>
-          <td><?php echo escape($row["order_email"]); ?></td>
-          <td><?php echo escape($row["product_name"]); ?></td>
-          <td><?php echo escape($row["quantity"]); ?></td>
-          <td><?php echo escape($row["order_date"]); ?></td>
-          <!-- <td><a href="update_order.php">Update</a><br></td>
-          <td><a href="delete_order.php">Delete</a><br></td> -->
-        </tr>
-      <?php endforeach; ?>
-      </tbody>
-    </table><br>
-    <?php } else { ?>
-      <blockquote>No results found for <?php echo escape($_POST['order_id']); ?>.</blockquote>
-    <?php } 
-} ?> 
+<div class="container">
+  <?php if ($success)?><p><?php echo $success; ?></p>
 
-<form method="post">
-  <input name="csrf" type="hidden" value="<?php echo escape($_SESSION['csrf']); ?>">
-  <label for="order_id">Enter the order number</label>
-  <input type="text" id="order_id" name="order_id"><br>
-  <input class="button" type="submit" name="submit" value="View Results">
-</form>
-<br>
+  <?php  
+  if (isset($_POST['submit'])) {
+    if ($result && $statement->rowCount() > 0) { ?>
+      <h3>Results</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Order Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Product Name</th>
+            <th>Quantity</th>
+            <th>Date</th>
+            <!-- <th colspan="2">Action</th> -->
+          </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($result as $row) : ?>
+          <tr>
+            <td><?php echo escape($row["order_id"]); ?></td>
+            <td><?php echo escape($row["order_name"]); ?></td>
+            <td><?php echo escape($row["order_email"]); ?></td>
+            <td><?php echo escape($row["product_name"]); ?></td>
+            <td><?php echo escape($row["quantity"]); ?></td>
+            <td><?php echo escape($row["order_date"]); ?></td>
+            <!-- <td><a href="update_order.php">Update</a><br></td>
+            <td><a href="delete_order.php">Delete</a><br></td> -->
+          </tr>
+        <?php endforeach; ?>
+        </tbody>
+      </table><br>
+      <?php } else { ?>
+        <blockquote>No results found for <?php echo escape($_POST['order_id']); ?>.</blockquote>
+      <?php } 
+  } ?> 
 
-<a href="index.php?action=emptyall" class="btn btn-primary" role="button">Go back to home page</a><br>
-<a href="update_order.php" class="btn btn-info" role="button">Update -> Order</a><br>	
-<a href="delete_order.php" class="btn btn-info" role="button">Delete -> Order</a><br>
+  <form method="post">
+    <input name="csrf" type="hidden" value="<?php echo escape($_SESSION['csrf']); ?>">
+    <label for="order_id">Enter the order number</label>
+    <input type="text" id="order_id" name="order_id"><br><br>
+    <input class="btn btn-success" type="submit" name="submit" value="View Results"><br>
+  </form>
+  <br>
+
+  <a href="index.php?action=emptyall" class="btn btn-primary" role="button">Go back to home page</a><br>
+  <a href="update_order.php" class="btn btn-info" role="button">Update -> Order</a><br>	
+  <a href="delete_order.php" class="btn btn-info" role="button">Delete -> Order</a><br>
+
+</div>
 
 <?php require "../templates/footer.php"; ?>
