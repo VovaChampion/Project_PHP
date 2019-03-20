@@ -15,9 +15,17 @@ if(isset($_POST['update']))
     $buyPrice = $_POST['buyPrice'];
     $msrp = $_POST['msrp'];
 
-        $result = $pdo->prepare("UPDATE classicmodels.products SET
-        productName=:productName, productLine=:productLine, productScale=:productScale, productVendor=:productVendor,
-        productDescription=:productDescription, quantityInStock=:quantityInStock, buyPrice=:buyPrice, MSRP=:MSRP WHERE productCode=:productCode;");
+        $result = $pdo->prepare("UPDATE products SET
+        productCode=:productCode,
+        productName=:productName, 
+        productLine=:productLine, 
+        productScale=:productScale, 
+        productVendor=:productVendor,
+        productDescription=:productDescription, 
+        quantityInStock=:quantityInStock, 
+        buyPrice=:buyPrice, 
+        MSRP=:MSRP 
+        WHERE productCode=:productCode;");
 
         $result->execute([
             ':productCode' => $productCode,
@@ -39,7 +47,7 @@ if(isset($_POST['update']))
 //getting product code from product list
 $productCode = $_GET['productCode'];
 
-$result = $pdo->prepare("SELECT * FROM classicmodels.products WHERE productCode=:productCode");
+$result = $pdo->prepare("SELECT * FROM products WHERE productCode=:productCode");
 $result->execute([':productCode' => $productCode]);
 $res = $result->fetchAll(PDO::FETCH_ASSOC);
 
@@ -77,35 +85,35 @@ foreach($res as $row)
             </tr> 
             <tr>
                 <td>Product Name</td>
-                <td><input type="text" name="productName" value="<?php echo $row['productName'];?>"></td>
+                <td><input type="text" name="productName" value="<?php echo $productName;?>"></td>
             </tr>
             <tr>
                 <td>Product Line</td>
-                <td><input type="text" name="productLine" value="<?php echo $row['productLine'];?>"></td>
+                <td><input type="text" name="productLine" value="<?php echo $productLine;?>"></td>
             </tr>
             <tr>
                 <td>Product Scale</td>
-                <td><input type="text" name="productScale" value="<?php echo $row['productScale'];?>"></td>
+                <td><input type="text" name="productScale" value="<?php echo $productScale;?>"></td>
             </tr>
             <tr>
                 <td>Product Vendor</td>
-                <td><input type="text" name="productVendor" value="<?php echo $row['productVendor'];?>"></td>
+                <td><input type="text" name="productVendor" value="<?php echo $productVendor;?>"></td>
             </tr>
             <tr>
                 <td>Product Description</td>
-                <td><input type="text" name="productDescription" value="<?php echo $row['productDescription'];?>"></td>
+                <td><input type="text" name="productDescription" value="<?php echo $productDescription;?>"></td>
             </tr>
             <tr>
                 <td>Quantity in Stock</td>
-                <td><input type="number" name="quantityInStock" value="<?php echo $row['quantityInStock'];?>"></td>
+                <td><input type="number" name="quantityInStock" value="<?php echo $quantityInStock;?>"></td>
             </tr>
             <tr>
                 <td>Buy Price</td>
-                <td><input type="text" name="buyPrice" value="<?php echo $row['buyPrice'];?>"></td>
+                <td><input type="text" name="buyPrice" value="<?php echo $buyPrice;?>"></td>
             </tr>
             <tr>
                 <td>MSRP</td>
-                <td><input type="text" name="msrp" value="<?php echo $row['MSRP'];?>"></td>
+                <td><input type="text" name="msrp" value="<?php echo $msrp;?>"></td>
             </tr>
 
             <tr>
