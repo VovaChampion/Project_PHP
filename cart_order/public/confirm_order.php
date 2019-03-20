@@ -1,11 +1,13 @@
 <?php 
 include "../templates/header.php"; 
+require "annex/config.php";
+require "annex/common.php";
 ?>
 
 <?php 
 
 try {
-    $conn = new PDO("mysql:host=localhost;dbname=cart_order", 'root', '');		
+    $conn = new PDO($dsn, $username, $password, $options);		
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
     $getOrderId = $conn->prepare("SELECT MAX(order_id) FROM orders");
