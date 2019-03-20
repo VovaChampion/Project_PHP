@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 20, 2019 at 12:38 PM
+-- Generation Time: Mar 18, 2019 at 09:14 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -49,13 +49,7 @@ INSERT INTO `orders` (`order_id`, `order_date`, `order_name`, `order_email`) VAL
 (8, '2019-03-18 09:01:41', 'vova', 'dasfa@fa.com'),
 (9, '2019-03-18 09:03:24', 'vova', 'vova2@gmail.com'),
 (10, '2019-03-18 09:07:37', 'vova', 'vova2@gmail.com'),
-(11, '2019-03-18 09:09:04', 'Eugenia', 'eugenia@gmail.com'),
-(12, '2019-03-18 09:32:37', 'Martin ', 'solveg@gmail.com'),
-(13, '2019-03-19 09:32:59', 'Henry', 'henry@hotmail.com'),
-(14, '2019-03-19 09:58:28', 'Superman', 'superman@world.com'),
-(15, '2019-03-19 10:00:59', 'batman', 'batman@world.com'),
-(16, '2019-03-19 02:10:35', 'sanches', 'alex@hotmail.com'),
-(17, '2019-03-19 03:47:42', 'Kevin', 'kev@nu.com');
+(11, '2019-03-18 09:09:04', 'Eugenia', 'eugenia@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -77,19 +71,12 @@ CREATE TABLE `orders_items` (
 INSERT INTO `orders_items` (`order_item_id`, `order_id`, `product_id`, `quantity`) VALUES
 (3, 2, 1, 1),
 (8, 4, 2, 1),
+(9, 5, 6, 2),
 (10, 5, 2, 2),
 (11, 6, 3, 3),
 (15, 10, 3, 1),
 (16, 11, 1, 3),
-(18, 11, 2, 1),
-(19, 12, 1, 2),
-(20, 12, 4, 2),
-(21, 13, 3, 2),
-(22, 14, 5, 2),
-(23, 15, 3, 1),
-(24, 16, 6, 1),
-(25, 17, 2, 2),
-(26, 17, 3, 2);
+(18, 11, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -115,7 +102,7 @@ INSERT INTO `products` (`product_id`, `product_name`, `product_image`, `product_
 (3, 'Laptop Asus', 'images/laptop.jpg', 'Desined for daily productivity and entertainment', '14000.00'),
 (4, 'Watch', 'images/watch.jpg', 'This watch is something personal for people with good taste ', '5000.00'),
 (5, 'Camera Canon', 'images/camera.jpg', 'One of the best Canon camera for profesionals', '4500.00'),
-(6, 'External hard drive', 'images/external-hard-drive.jpg', 'Seagate Expansion 8TB External Hard Drive. Use it whenever you want', '2000.00');
+(6, 'External hard drive', 'images/external-hard-drive.jpg', 'Seagate Expansion 8TB External Hard Drive', '2000.00');
 
 --
 -- Indexes for dumped tables
@@ -150,13 +137,13 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `orders_items`
 --
 ALTER TABLE `orders_items`
-  MODIFY `order_item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `order_item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `products`

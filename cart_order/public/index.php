@@ -1,13 +1,12 @@
 <?php
 
-session_start();
-
-require_once('../lib/cart_class.php');
-require_once('../lib/db_class.php');
+require "annex/config.php";
+require "annex/common.php";
 
 $total=0;
 
-$conn = new PDO("mysql:host=localhost;dbname=cart_order", 'root', '');		
+$conn = new PDO($dsn, $username, $password, $options);
+// $conn = new PDO("mysql:host=localhost;dbname=cart_order", 'root', '');			
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 //get action string
