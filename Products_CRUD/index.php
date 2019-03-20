@@ -17,11 +17,22 @@ $result = $pdo->query("SELECT * FROM products ORDER BY productCode DESC");
         body {
             margin: 20px;
         }
+       .header > form {
+            float: right;
+            margin-left: 0;
+            display: inline-block;
+        }     
     </style>
 <body>
-    
+<div class="header">
     <a href="add.html" class="badge badge-primary" style="padding:9px">Add New Product</a> <br/><br/>
- 
+    
+<form class="form-group" action="search.php" method="get">
+<input  type="text" name="keyword" placeholder="Search Product">
+<input type="submit" name="submit" value="Search" class="btn btn-primary" />
+</form>
+</div>
+
     <table class="table">
         <thead class="thead-dark">
             <tr>
